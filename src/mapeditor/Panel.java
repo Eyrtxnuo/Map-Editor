@@ -437,6 +437,7 @@ public class Panel extends javax.swing.JPanel {
             File file = fileChooser.getSelectedFile();
             try {
                 MapEditor.mapImg.loadLevelData(file);
+                LenghtSpinner.setValue(MapEditor.mapImg.getWidth());
                 System.out.println("Loaded: " + file.getAbsoluteFile());
             } catch (IOException ex) {
                 Logger.getLogger(KeyboardInputs.class.getName()).log(Level.SEVERE, null, ex);
