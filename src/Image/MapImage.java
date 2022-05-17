@@ -158,9 +158,11 @@ public class MapImage{
         return GetImageAtlas("/crabby.png");
     }
     
-   public static BufferedImage GetFollowCrabbyAtlas(){
+    public static BufferedImage GetFollowCrabbyAtlas(){
         return GetImageAtlas("/follow-crabby.png");
     }
+    
+    
     
     private static BufferedImage getEnemySprite(int i) {
         switch (i){
@@ -179,7 +181,7 @@ public class MapImage{
     
     
     public static BufferedImage getPrevewSprite(int i) {
-        if(i>0){
+        if(i>=0){
             return getLevelSprite(i);
         }else{
             int i2 = -(i+1);
