@@ -23,7 +23,7 @@ public class PreviewPanel extends javax.swing.JPanel {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        g.drawImage(MapImage.getPrevewSprite((int)MapEditor.jPanel.BlockSpinner.getValue()), 0,0 ,getWidth(), getHeight(), null);
+        g.drawImage(MapImage.getLevelSprite((int)MapEditor.jPanel.BlockSpinner.getValue()), 0,0 ,getWidth(), getHeight(), null);
     }
 
     

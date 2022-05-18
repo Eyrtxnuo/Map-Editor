@@ -65,7 +65,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="PreviewPanel" alignment="0" min="-2" pref="64" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="PreviewPanel" min="-2" pref="64" max="-2" attributes="0"/>
+                                      <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="HandToggleButton" min="-2" max="-2" attributes="0"/>
@@ -465,9 +468,7 @@
                       <Component id="bntEnemy0" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bntEnemy1" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bntEnemy2" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace pref="420" max="32767" attributes="0"/>
+                      <EmptySpace pref="466" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -476,7 +477,6 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="bntEnemy2" min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="bntEnemy1" min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="bntEnemy0" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
@@ -488,8 +488,8 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="bntEnemy0">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/barrier.png"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new ImageIcon(MapImage.GetCrabbyAtlas())&#xd;&#xa;" type="code"/>
                 </Property>
               </Properties>
               <Events>
@@ -499,21 +499,11 @@
             <Component class="javax.swing.JButton" name="bntEnemy1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new ImageIcon(MapImage.GetCrabbyAtlas())&#xd;&#xa;" type="code"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntEnemy1ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="bntEnemy2">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="new ImageIcon(MapImage.GetFollowCrabbyAtlas())&#xd;&#xa;" type="code"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntEnemy2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntEnemy1ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

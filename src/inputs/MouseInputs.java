@@ -85,7 +85,7 @@ public class MouseInputs implements MouseListener, MouseMotionListener{
                         mapeditor.MapEditor.repaint();
                     }
                 }else{
-                    int enemy = -getBlock()-1;
+                    int enemy = -getBlock();
                     if(mapeditor.MapEditor.mapImg.getPixel(x, y).getGreen()!= enemy){
                         mapeditor.MapEditor.mapImg.getPixel(x, y).setGreen(enemy);
                         mapeditor.MapEditor.repaint();
