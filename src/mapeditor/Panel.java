@@ -87,6 +87,8 @@ public class Panel extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         bntEnemy0 = new javax.swing.JButton();
         bntEnemy1 = new javax.swing.JButton();
+        bntEnemy2 = new javax.swing.JButton();
+        bntEnemy3 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1000, 600));
 
@@ -323,19 +325,34 @@ public class Panel extends javax.swing.JPanel {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        bntEnemy0.setIcon(new ImageIcon(MapImage.GetCrabbyAtlas())
-        );
+        bntEnemy0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barrier.png"))); // NOI18N
         bntEnemy0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntEnemy0ActionPerformed(evt);
             }
         });
 
-        bntEnemy1.setIcon(new ImageIcon(MapImage.GetFollowCrabbyAtlas())
+        bntEnemy1.setIcon(new ImageIcon(MapImage.GetCrabbyAtlas())
         );
         bntEnemy1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntEnemy1ActionPerformed(evt);
+            }
+        });
+
+        bntEnemy2.setIcon(new ImageIcon(MapImage.GetFollowCrabbyAtlas())
+        );
+        bntEnemy2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntEnemy2ActionPerformed(evt);
+            }
+        });
+
+        bntEnemy3.setIcon(new ImageIcon(MapImage.GetZombieAtlas())
+        );
+        bntEnemy3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntEnemy3ActionPerformed(evt);
             }
         });
 
@@ -348,13 +365,19 @@ public class Panel extends javax.swing.JPanel {
                 .addComponent(bntEnemy0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bntEnemy1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(466, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bntEnemy2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bntEnemy3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(374, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(bntEnemy3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bntEnemy2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntEnemy1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bntEnemy0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -404,9 +427,7 @@ public class Panel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(PreviewPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(17, 17, 17))
+                                    .addComponent(PreviewPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(HandToggleButton)
@@ -428,6 +449,7 @@ public class Panel extends javax.swing.JPanel {
             File file = fileChooser.getSelectedFile();
             try {
                 MapEditor.mapImg.loadLevelData(file);
+                LenghtSpinner.setValue(MapEditor.mapImg.getWidth());
                 System.out.println("Loaded: " + file.getAbsoluteFile());
             } catch (IOException ex) {
                 Logger.getLogger(KeyboardInputs.class.getName()).log(Level.SEVERE, null, ex);
@@ -547,6 +569,16 @@ public class Panel extends javax.swing.JPanel {
         repaint();
     }//GEN-LAST:event_bntEnemy1ActionPerformed
 
+    private void bntEnemy2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEnemy2ActionPerformed
+        BlockSpinner.setValue(-3);
+        repaint();
+    }//GEN-LAST:event_bntEnemy2ActionPerformed
+
+    private void bntEnemy3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEnemy3ActionPerformed
+        BlockSpinner.setValue(-4);
+        repaint();
+    }//GEN-LAST:event_bntEnemy3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JSpinner BlockSpinner;
@@ -568,6 +600,8 @@ public class Panel extends javax.swing.JPanel {
     private javax.swing.JButton bntBlock9;
     private javax.swing.JButton bntEnemy0;
     private javax.swing.JButton bntEnemy1;
+    private javax.swing.JButton bntEnemy2;
+    private javax.swing.JButton bntEnemy3;
     private javax.swing.JButton btnOpen;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;

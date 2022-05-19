@@ -7,6 +7,7 @@ package Image;
 import Env.Constants;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +18,9 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 public class MapImage{
+
+    
+
 
     Pixel[][] matrix;
     private static final BufferedImage[] levelSprite = importOutsideSprites(); 
@@ -92,6 +96,11 @@ public class MapImage{
                     index=11;//if not valid, set air
                 }
                 g.drawImage(levelSprite[index], x, y, null);
+                
+                int enemy = matrix[h][w].getGreen();
+                if(enemy!=0){
+                    g.drawImage(getEnemySprite(enemy), x, y, null);
+                }
             }
         }
         return image;
@@ -151,6 +160,39 @@ public class MapImage{
     
     public static BufferedImage GetFollowCrabbyAtlas(){
         return GetImageAtlas("/follow-crabby.png");
+    }
+    
+    public static BufferedImage GetZombieAtlas(){
+        return GetImageAtlas("/zombie_atlas.png");
+    }
+    
+    
+    private static BufferedImage getEnemySprite(int i) {
+        switch (i){
+            case 0 ->{
+                return null;
+            }
+            case 1 ->{
+                return GetCrabbyAtlas();
+            }
+            case 2->{
+                return GetFollowCrabbyAtlas();
+            }
+            case 3->{
+                return GetZombieAtlas();
+            }
+        }
+        return null;
+    }
+    
+    
+    public static BufferedImage getPrevewSprite(int i) {
+        if(i>=0){
+            return getLevelSprite(i);
+        }else{
+            int i2 = -(i+1);
+            return getEnemySprite(i2);
+        }
     }
     
     public void loadLevelData(File file) throws IOException {
